@@ -1,4 +1,4 @@
-// Generated from /home/hackerbuddy/dev/langs/CalLang/src/CalLang.g4 by ANTLR 4.8
+// Generated from /home/hackerbuddy/dev/opensource/calang/src/CalLang.g4 by ANTLR 4.8
 
 package antlr;
 
@@ -61,18 +61,6 @@ public class CalLangBaseListener implements CalLangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVarassign(CalLangParser.VarassignContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDtype(CalLangParser.DtypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDtype(CalLangParser.DtypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

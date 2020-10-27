@@ -1,4 +1,4 @@
-// Generated from /home/hackerbuddy/dev/langs/CalLang/src/CalLang.g4 by ANTLR 4.8
+// Generated from /home/hackerbuddy/dev/opensource/calang/src/CalLang.g4 by ANTLR 4.8
 
 package antlr;
 
@@ -36,12 +36,6 @@ public interface CalLangVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVarassign(CalLangParser.VarassignContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link CalLangParser#dtype}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDtype(CalLangParser.DtypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CalLangParser#show}.
 	 * @param ctx the parse tree

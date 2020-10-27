@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        String fileName = "/home/hackerbuddy/dev/langs/CalLang/samples/sample.cal";
+        String fileName = "/home/hackerbuddy/dev/opensource/calang/samples/sample.cal";
         CalLangParser parser = getParser(fileName);
 
         ParseTree antlrAst = parser.prog();

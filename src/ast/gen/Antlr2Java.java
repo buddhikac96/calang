@@ -52,17 +52,11 @@ public class Antlr2Java extends CalLangBaseVisitor<String> {
     }
 
     @Override
-    public String visitDtype(CalLangParser.DtypeContext ctx) {
-        String dataType = ctx.getChild(0).getText();
-        return dataType;
-    }
-
-    @Override
     public String visitShow(CalLangParser.ShowContext ctx) {
         String start = "System.out.println(";
         String end = ");";
 
-        String context = visit(ctx.getChild(3));
+        String context = visit(ctx.getChild(2));
 
         return new StringBuilder(start)
                 .append(context)

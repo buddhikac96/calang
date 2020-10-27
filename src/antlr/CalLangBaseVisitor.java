@@ -1,4 +1,4 @@
-// Generated from /home/hackerbuddy/dev/langs/CalLang/src/CalLang.g4 by ANTLR 4.8
+// Generated from /home/hackerbuddy/dev/opensource/calang/src/CalLang.g4 by ANTLR 4.8
 
 package antlr;
 
@@ -41,13 +41,6 @@ public class CalLangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitVarassign(CalLangParser.VarassignContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitDtype(CalLangParser.DtypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

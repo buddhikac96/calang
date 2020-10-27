@@ -1,4 +1,4 @@
-// Generated from /home/hackerbuddy/dev/langs/CalLang/src/CalLang.g4 by ANTLR 4.8
+// Generated from /home/hackerbuddy/dev/opensource/calang/src/CalLang.g4 by ANTLR 4.8
 
 package antlr;
 
@@ -49,16 +49,6 @@ public interface CalLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVarassign(CalLangParser.VarassignContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link CalLangParser#dtype}.
-	 * @param ctx the parse tree
-	 */
-	void enterDtype(CalLangParser.DtypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link CalLangParser#dtype}.
-	 * @param ctx the parse tree
-	 */
-	void exitDtype(CalLangParser.DtypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link CalLangParser#show}.
 	 * @param ctx the parse tree

@@ -11,14 +11,10 @@ statement: vardeclare
     | show
     ;
 
-vardeclare: dtype ID '=' expr ';'
+vardeclare: DTYPE ID '=' expr ';'
     ;
 
 varassign: ID '=' expr ';'
-    ;
-
-dtype: INT
-    | FLOAT
     ;
 
 show: 'show' '(' expr ')' ';'
@@ -32,6 +28,8 @@ expr: expr '*' expr     # Multiplication
     | ID                # Variable
     ;
 
+DTYPE: 'float' | 'int';
+
 LIT: INTLIT
     | FLOATLIT
     ;
@@ -40,10 +38,6 @@ INTLIT: [1-9][0-9]*;
 
 FLOATLIT: INTLIT* '.' [0-9]+
     ;
-
-INT: 'int';
-
-FLOAT: 'float';
 
 ID: [a-zA-Z]+
     ;

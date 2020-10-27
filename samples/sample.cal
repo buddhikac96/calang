@@ -1,4 +1,3 @@
 int a = 5;
-int b = 10;
-int total = a + b;
-show(total + 2 * 3);
+float b = 10;
+show(a + b);

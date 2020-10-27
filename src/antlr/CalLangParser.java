@@ -1,4 +1,4 @@
-// Generated from /home/hackerbuddy/dev/langs/CalLang/src/CalLang.g4 by ANTLR 4.8
+// Generated from /home/hackerbuddy/dev/opensource/calang/src/CalLang.g4 by ANTLR 4.8
 
 package antlr;
 
@@ -20,28 +20,27 @@ public class CalLangParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		LIT=10, INTLIT=11, FLOATLIT=12, INT=13, FLOAT=14, ID=15, WS=16;
+		DTYPE=10, LIT=11, INTLIT=12, FLOATLIT=13, ID=14, WS=15;
 	public static final int
 		RULE_prog = 0, RULE_statement = 1, RULE_vardeclare = 2, RULE_varassign = 3, 
-		RULE_dtype = 4, RULE_show = 5, RULE_expr = 6;
+		RULE_show = 4, RULE_expr = 5;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"prog", "statement", "vardeclare", "varassign", "dtype", "show", "expr"
+			"prog", "statement", "vardeclare", "varassign", "show", "expr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "';'", "'show'", "'('", "')'", "'*'", "'/'", "'-'", "'+'", 
-			null, null, null, "'int'", "'float'"
+			null, "'='", "';'", "'show'", "'('", "')'", "'*'", "'/'", "'-'", "'+'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, "LIT", "INTLIT", 
-			"FLOATLIT", "INT", "FLOAT", "ID", "WS"
+			null, null, null, null, null, null, null, null, null, null, "DTYPE", 
+			"LIT", "INTLIT", "FLOATLIT", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -129,21 +128,21 @@ public class CalLangParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(17);
+			setState(15);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << INT) | (1L << FLOAT) | (1L << ID))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << DTYPE) | (1L << ID))) != 0)) {
 				{
 				{
-				setState(14);
+				setState(12);
 				statement();
 				}
 				}
-				setState(19);
+				setState(17);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(20);
+			setState(18);
 			match(EOF);
 			}
 		}
@@ -191,28 +190,27 @@ public class CalLangParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_statement);
 		try {
-			setState(25);
+			setState(23);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case INT:
-			case FLOAT:
+			case DTYPE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(22);
+				setState(20);
 				vardeclare();
 				}
 				break;
 			case ID:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(23);
+				setState(21);
 				varassign();
 				}
 				break;
 			case T__2:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(24);
+				setState(22);
 				show();
 				}
 				break;
@@ -232,9 +230,7 @@ public class CalLangParser extends Parser {
 	}
 
 	public static class VardeclareContext extends ParserRuleContext {
-		public DtypeContext dtype() {
-			return getRuleContext(DtypeContext.class,0);
-		}
+		public TerminalNode DTYPE() { return getToken(CalLangParser.DTYPE, 0); }
 		public TerminalNode ID() { return getToken(CalLangParser.ID, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
@@ -264,15 +260,15 @@ public class CalLangParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(27);
-			dtype();
-			setState(28);
+			setState(25);
+			match(DTYPE);
+			setState(26);
 			match(ID);
-			setState(29);
+			setState(27);
 			match(T__0);
-			setState(30);
+			setState(28);
 			expr(0);
-			setState(31);
+			setState(29);
 			match(T__1);
 			}
 		}
@@ -317,66 +313,14 @@ public class CalLangParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(33);
+			setState(31);
 			match(ID);
-			setState(34);
+			setState(32);
 			match(T__0);
-			setState(35);
+			setState(33);
 			expr(0);
-			setState(36);
+			setState(34);
 			match(T__1);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class DtypeContext extends ParserRuleContext {
-		public TerminalNode INT() { return getToken(CalLangParser.INT, 0); }
-		public TerminalNode FLOAT() { return getToken(CalLangParser.FLOAT, 0); }
-		public DtypeContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_dtype; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalLangListener ) ((CalLangListener)listener).enterDtype(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CalLangListener ) ((CalLangListener)listener).exitDtype(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalLangVisitor ) return ((CalLangVisitor<? extends T>)visitor).visitDtype(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final DtypeContext dtype() throws RecognitionException {
-		DtypeContext _localctx = new DtypeContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_dtype);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(38);
-			_la = _input.LA(1);
-			if ( !(_la==INT || _la==FLOAT) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -415,19 +359,19 @@ public class CalLangParser extends Parser {
 
 	public final ShowContext show() throws RecognitionException {
 		ShowContext _localctx = new ShowContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_show);
+		enterRule(_localctx, 8, RULE_show);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(40);
+			setState(36);
 			match(T__2);
-			setState(41);
+			setState(37);
 			match(T__3);
-			setState(42);
+			setState(38);
 			expr(0);
-			setState(43);
+			setState(39);
 			match(T__4);
-			setState(44);
+			setState(40);
 			match(T__1);
 			}
 		}
@@ -585,13 +529,13 @@ public class CalLangParser extends Parser {
 		int _parentState = getState();
 		ExprContext _localctx = new ExprContext(_ctx, _parentState);
 		ExprContext _prevctx = _localctx;
-		int _startState = 12;
-		enterRecursionRule(_localctx, 12, RULE_expr, _p);
+		int _startState = 10;
+		enterRecursionRule(_localctx, 10, RULE_expr, _p);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(45);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LIT:
@@ -600,7 +544,7 @@ public class CalLangParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(47);
+				setState(43);
 				match(LIT);
 				}
 				break;
@@ -609,7 +553,7 @@ public class CalLangParser extends Parser {
 				_localctx = new VariableContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(48);
+				setState(44);
 				match(ID);
 				}
 				break;
@@ -617,7 +561,7 @@ public class CalLangParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(65);
+			setState(61);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -625,18 +569,18 @@ public class CalLangParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(63);
+					setState(59);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MultiplicationContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(51);
+						setState(47);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(52);
+						setState(48);
 						match(T__5);
-						setState(53);
+						setState(49);
 						expr(7);
 						}
 						break;
@@ -644,11 +588,11 @@ public class CalLangParser extends Parser {
 						{
 						_localctx = new DivisionContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(54);
+						setState(50);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(55);
+						setState(51);
 						match(T__6);
-						setState(56);
+						setState(52);
 						expr(6);
 						}
 						break;
@@ -656,11 +600,11 @@ public class CalLangParser extends Parser {
 						{
 						_localctx = new SubstractionContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(57);
+						setState(53);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(58);
+						setState(54);
 						match(T__7);
-						setState(59);
+						setState(55);
 						expr(5);
 						}
 						break;
@@ -668,18 +612,18 @@ public class CalLangParser extends Parser {
 						{
 						_localctx = new AdditionContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(60);
+						setState(56);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(61);
+						setState(57);
 						match(T__8);
-						setState(62);
+						setState(58);
 						expr(4);
 						}
 						break;
 					}
 					} 
 				}
-				setState(67);
+				setState(63);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
@@ -698,7 +642,7 @@ public class CalLangParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 6:
+		case 5:
 			return expr_sempred((ExprContext)_localctx, predIndex);
 		}
 		return true;
@@ -718,24 +662,23 @@ public class CalLangParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22G\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\7\2\22\n\2\f\2\16\2\25"+
-		"\13\2\3\2\3\2\3\3\3\3\3\3\5\3\34\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3"+
-		"\5\3\5\3\5\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\5\b\64\n\b\3\b"+
-		"\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\7\bB\n\b\f\b\16\bE\13\b\3"+
-		"\b\2\3\16\t\2\4\6\b\n\f\16\2\3\3\2\17\20\2G\2\23\3\2\2\2\4\33\3\2\2\2"+
-		"\6\35\3\2\2\2\b#\3\2\2\2\n(\3\2\2\2\f*\3\2\2\2\16\63\3\2\2\2\20\22\5\4"+
-		"\3\2\21\20\3\2\2\2\22\25\3\2\2\2\23\21\3\2\2\2\23\24\3\2\2\2\24\26\3\2"+
-		"\2\2\25\23\3\2\2\2\26\27\7\2\2\3\27\3\3\2\2\2\30\34\5\6\4\2\31\34\5\b"+
-		"\5\2\32\34\5\f\7\2\33\30\3\2\2\2\33\31\3\2\2\2\33\32\3\2\2\2\34\5\3\2"+
-		"\2\2\35\36\5\n\6\2\36\37\7\21\2\2\37 \7\3\2\2 !\5\16\b\2!\"\7\4\2\2\""+
-		"\7\3\2\2\2#$\7\21\2\2$%\7\3\2\2%&\5\16\b\2&\'\7\4\2\2\'\t\3\2\2\2()\t"+
-		"\2\2\2)\13\3\2\2\2*+\7\5\2\2+,\7\6\2\2,-\5\16\b\2-.\7\7\2\2./\7\4\2\2"+
-		"/\r\3\2\2\2\60\61\b\b\1\2\61\64\7\f\2\2\62\64\7\21\2\2\63\60\3\2\2\2\63"+
-		"\62\3\2\2\2\64C\3\2\2\2\65\66\f\b\2\2\66\67\7\b\2\2\67B\5\16\b\t89\f\7"+
-		"\2\29:\7\t\2\2:B\5\16\b\b;<\f\6\2\2<=\7\n\2\2=B\5\16\b\7>?\f\5\2\2?@\7"+
-		"\13\2\2@B\5\16\b\6A\65\3\2\2\2A8\3\2\2\2A;\3\2\2\2A>\3\2\2\2BE\3\2\2\2"+
-		"CA\3\2\2\2CD\3\2\2\2D\17\3\2\2\2EC\3\2\2\2\7\23\33\63AC";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21C\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\7\2\20\n\2\f\2\16\2\23\13\2\3\2"+
+		"\3\2\3\3\3\3\3\3\5\3\32\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3"+
+		"\5\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\3\7\5\7\60\n\7\3\7\3\7\3\7\3\7\3\7"+
+		"\3\7\3\7\3\7\3\7\3\7\3\7\3\7\7\7>\n\7\f\7\16\7A\13\7\3\7\2\3\f\b\2\4\6"+
+		"\b\n\f\2\2\2D\2\21\3\2\2\2\4\31\3\2\2\2\6\33\3\2\2\2\b!\3\2\2\2\n&\3\2"+
+		"\2\2\f/\3\2\2\2\16\20\5\4\3\2\17\16\3\2\2\2\20\23\3\2\2\2\21\17\3\2\2"+
+		"\2\21\22\3\2\2\2\22\24\3\2\2\2\23\21\3\2\2\2\24\25\7\2\2\3\25\3\3\2\2"+
+		"\2\26\32\5\6\4\2\27\32\5\b\5\2\30\32\5\n\6\2\31\26\3\2\2\2\31\27\3\2\2"+
+		"\2\31\30\3\2\2\2\32\5\3\2\2\2\33\34\7\f\2\2\34\35\7\20\2\2\35\36\7\3\2"+
+		"\2\36\37\5\f\7\2\37 \7\4\2\2 \7\3\2\2\2!\"\7\20\2\2\"#\7\3\2\2#$\5\f\7"+
+		"\2$%\7\4\2\2%\t\3\2\2\2&\'\7\5\2\2\'(\7\6\2\2()\5\f\7\2)*\7\7\2\2*+\7"+
+		"\4\2\2+\13\3\2\2\2,-\b\7\1\2-\60\7\r\2\2.\60\7\20\2\2/,\3\2\2\2/.\3\2"+
+		"\2\2\60?\3\2\2\2\61\62\f\b\2\2\62\63\7\b\2\2\63>\5\f\7\t\64\65\f\7\2\2"+
+		"\65\66\7\t\2\2\66>\5\f\7\b\678\f\6\2\289\7\n\2\29>\5\f\7\7:;\f\5\2\2;"+
+		"<\7\13\2\2<>\5\f\7\6=\61\3\2\2\2=\64\3\2\2\2=\67\3\2\2\2=:\3\2\2\2>A\3"+
+		"\2\2\2?=\3\2\2\2?@\3\2\2\2@\r\3\2\2\2A?\3\2\2\2\7\21\31/=?";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
