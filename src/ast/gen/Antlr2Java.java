@@ -1,3 +1,13 @@
+/*
+    This package compiles the calang code directly into Java code.
+    Here compiling happen in parsing tier.
+    Building the AST and AST translation will be added later.
+    After creating AST, we can add semantic analysis.
+    Mostly consider un-initialize variables(symbol table) and scoping.
+    Currently, the Java code manually written.
+    Using StringTemplate will improve the process.
+*/
+
 package ast.gen;
 
 import antlr.CalLangBaseVisitor;
