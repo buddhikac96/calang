@@ -3,7 +3,7 @@ calang is a Simple Programming language which is compiled into Java.
 
 ## Syntax
 
-####calang
+#### calang
 ```
 int a = 5;
 int b = 10;
@@ -49,5 +49,5 @@ Entry point of the compiler
 Mock model of the AST
 
 ##### gen
-Antlr2Java.java file contains the implementation for 
+<b>Antlr2Java.java</b> file contains the implementation for 
 compiling calang into Java in parse tree tier.
