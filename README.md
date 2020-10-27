@@ -8,7 +8,7 @@ calang is a Simple Programming language which is compiled into Java.
 int a = 5;
 int b = 10;
 int total = a + b;
-show(total)
+show(total);
 ```
 #### java
 ```java
@@ -17,7 +17,7 @@ public class Main{
 		int a = 5;
 		int b = 10;
 		int total = a + b;
-		System.out.println(null);
+		System.out.println(total);
 	}
 }
 ```
