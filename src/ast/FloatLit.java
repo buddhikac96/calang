@@ -9,6 +9,6 @@ public class FloatLit extends Literal {
 
     @Override
     public String toJava() {
-        return new Float(this.value).toString();
+        return Float.toString(this.value);
     }
 }

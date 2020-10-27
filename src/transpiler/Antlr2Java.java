@@ -8,7 +8,7 @@
     Using StringTemplate will improve the process.
 */
 
-package ast.gen;
+package transpiler;
 
 import antlr.CalLangBaseVisitor;
 import antlr.CalLangParser;

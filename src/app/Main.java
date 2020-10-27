@@ -2,11 +2,11 @@ package app;
 
 import antlr.CalLangLexer;
 import antlr.CalLangParser;
-import ast.gen.Antlr2Java;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import transpiler.Antlr2Java;
 
 import java.io.IOException;
 

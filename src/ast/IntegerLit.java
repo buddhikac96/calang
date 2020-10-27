@@ -9,7 +9,7 @@ public class IntegerLit extends Literal {
 
     @Override
     public String toJava() {
-        return new Integer(this.value).toString();
+        return Integer.toString(this.value);
     }
 }
 
