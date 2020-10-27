@@ -15,6 +15,7 @@ check(a > b) {
     a = a - 1;
     b = b - 1;
 }
+show(a);
 ```
 
 #### java
@@ -30,6 +31,7 @@ public class Main{
 			a = a - 1;
 			b = b - 1;
 		}
+                System.out.println(a);
 	}
 }
 ```
