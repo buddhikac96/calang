@@ -7,17 +7,27 @@ calang is a Simple Programming language which is compiled into Java.
 ```
 int a = 5;
 int b = 10;
-int total = a + b;
-show(total);
+check(a > b) {
+    a = 10;
+    b = 5;
+}otherwise{
+    a = a - 1;
+    b = b - 1;
+}
 ```
 #### java
 ```java
 public class Main{
 	public static void main(String... args){
-		int a = 5;
-		int b = 10;
-		int total = a + b;
-		System.out.println(total);
+		a = 5;
+		b = 10;
+		if(a > b){
+			a = 10;
+			b = 5;
+		}else{
+			a = a - 1;
+			b = b - 1;
+		}
 	}
 }
 ```

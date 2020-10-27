@@ -48,6 +48,7 @@ public class Antlr2Java extends CalLangBaseVisitor<String> {
         return new StringBuilder(ID)
                 .append(" = ")
                 .append(value)
+                .append(";")
                 .toString();
     }
 
@@ -70,7 +71,7 @@ public class Antlr2Java extends CalLangBaseVisitor<String> {
         String right = visit(ctx.getChild(2));
 
         StringBuilder subtraction = new StringBuilder(left)
-                .append(" + ")
+                .append(" - ")
                 .append(right);
 
         return subtraction.toString();
