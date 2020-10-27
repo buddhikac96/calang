@@ -1,7 +1,8 @@
 # calang
 calang is a Simple Programming language which is compiled into Java.
+This language contains simple arithmetic operations.
 
-## Syntax
+## Sample Code
 
 #### calang
 ```
@@ -15,6 +16,7 @@ check(a > b) {
     b = b - 1;
 }
 ```
+
 #### java
 ```java
 public class Main{
@@ -31,6 +33,20 @@ public class Main{
 	}
 }
 ```
+
+### Features
+* Initialize variables
+* Assign values to variables
+* Arithmetic operations
+    * Multiplication (*)
+    * Division (/)
+    * Subtraction (-)
+    * Addition (+)
+* Comparison operations
+    * Equal (==)
+    * Not Equal (!=)
+    * Greater Than (>)
+    * Less Than (<)
 
 ### About
 I have antlr4 parser generator to create the parser. 
