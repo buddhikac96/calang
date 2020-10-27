@@ -49,6 +49,8 @@ public class Main{
     * Not Equal (!=)
     * Greater Than (>)
     * Less Than (<)
+* If condition (check)
+* Print (show)
 
 ### About
 I have antlr4 parser generator to create the parser. 
