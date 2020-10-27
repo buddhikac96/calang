@@ -9,6 +9,7 @@ prog: statement* EOF;
 statement: vardeclare
     | varassign
     | show
+    | ifstmt
     ;
 
 vardeclare: DTYPE ID '=' expr ';'
@@ -24,9 +25,21 @@ expr: expr '*' expr     # Multiplication
     | expr '/' expr     # Division
     | expr '-' expr     # Substraction
     | expr '+' expr     # Addition
+    | expr '==' expr    # Equal
+    | expr '!=' expr    # NotEqual
+    | expr '>' expr     # GreaterThan
+    | expr '<' expr     # LessThan
     | LIT               # Literal
     | ID                # Variable
     ;
+
+ifstmt: 'check('  expr  ')' block ('otherwise' block)?      # IfStatement
+    ;
+
+block: '{' blockbody '}'
+    ;
+
+blockbody: varassign*;
 
 DTYPE: 'float' | 'int';
 

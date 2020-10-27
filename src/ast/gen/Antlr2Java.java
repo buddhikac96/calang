@@ -123,4 +123,96 @@ public class Antlr2Java extends CalLangBaseVisitor<String> {
 
         return division.toString();
     }
+
+    @Override
+    public String visitLessThan(CalLangParser.LessThanContext ctx) {
+        String left = visit(ctx.getChild(0));
+        String right = visit(ctx.getChild(2));
+
+        return new StringBuilder(left)
+                .append(" < ")
+                .append(right)
+                .toString();
+    }
+
+    @Override
+    public String visitNotEqual(CalLangParser.NotEqualContext ctx) {
+        String left = visit(ctx.getChild(0));
+        String right = visit(ctx.getChild(2));
+
+        return new StringBuilder(left)
+                .append(" != ")
+                .append(right)
+                .toString();
+    }
+
+    @Override
+    public String visitEqual(CalLangParser.EqualContext ctx) {
+        String left = visit(ctx.getChild(0));
+        String right = visit(ctx.getChild(2));
+
+        return new StringBuilder(left)
+                .append(" == ")
+                .append(right)
+                .toString();
+    }
+
+    @Override
+    public String visitGreaterThan(CalLangParser.GreaterThanContext ctx) {
+        String left = visit(ctx.getChild(0));
+        String right = visit(ctx.getChild(2));
+
+        return new StringBuilder(left)
+                .append(" > ")
+                .append(right)
+                .toString();
+    }
+
+    @Override
+    public String visitIfStatement(CalLangParser.IfStatementContext ctx) {
+        String condition = visit(ctx.getChild(1));
+
+        String ifBlock = visit(ctx.getChild(3));
+        String elseBlock = "";
+
+        if(ctx.getChildCount() > 4){
+            elseBlock = visit(ctx.getChild(5));
+        }
+
+        return new StringBuilder("if(")
+                .append(condition + ")")
+                .append(ifBlock)
+                .append("else")
+                .append(elseBlock)
+                .toString();
+    }
+
+    @Override
+    public String visitBlock(CalLangParser.BlockContext ctx) {
+        String stmts = visit(ctx.getChild(1));
+
+        return new StringBuilder("{")
+                .append(stmts + "\n")
+                .append("}")
+                .toString();
+    }
+
+    @Override
+    public String visitBlockbody(CalLangParser.BlockbodyContext ctx) {
+        List<String> stmts = new ArrayList<>();
+        for(int i = 0; i < ctx.getChildCount(); i++){
+            String stmt = visit(ctx.getChild(i));
+            stmts.add(stmt);
+        }
+
+        StringBuilder javaCode = new StringBuilder();
+
+        for(String stmt : stmts){
+            javaCode.append("\n\t")
+                    .append(stmt)
+                    .append(";");
+        }
+
+        return javaCode.toString();
+    }
 }

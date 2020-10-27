@@ -96,6 +96,18 @@ public interface CalLangListener extends ParseTreeListener {
 	 */
 	void exitAddition(CalLangParser.AdditionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code LessThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessThan(CalLangParser.LessThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code LessThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessThan(CalLangParser.LessThanContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Variable}
 	 * labeled alternative in {@link CalLangParser#expr}.
 	 * @param ctx the parse tree
@@ -107,6 +119,42 @@ public interface CalLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariable(CalLangParser.VariableContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code NotEqual}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotEqual(CalLangParser.NotEqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code NotEqual}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotEqual(CalLangParser.NotEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Equal}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqual(CalLangParser.EqualContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Equal}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqual(CalLangParser.EqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code GreaterThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterGreaterThan(CalLangParser.GreaterThanContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code GreaterThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitGreaterThan(CalLangParser.GreaterThanContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Literal}
 	 * labeled alternative in {@link CalLangParser#expr}.
@@ -131,4 +179,36 @@ public interface CalLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDivision(CalLangParser.DivisionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code IfStatement}
+	 * labeled alternative in {@link CalLangParser#ifstmt}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(CalLangParser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code IfStatement}
+	 * labeled alternative in {@link CalLangParser#ifstmt}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(CalLangParser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CalLangParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlock(CalLangParser.BlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CalLangParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlock(CalLangParser.BlockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link CalLangParser#blockbody}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlockbody(CalLangParser.BlockbodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CalLangParser#blockbody}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlockbody(CalLangParser.BlockbodyContext ctx);
 }

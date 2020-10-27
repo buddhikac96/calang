@@ -1,4 +1,9 @@
-int a = 5;
-int b = 10;
-int total = a + b;
-show(total);
+check(a>b){
+    a = 5;
+    b = 10;
+    c = 15;
+}otherwise{
+a = 5;
+    b = 10;
+    c = 15;
+}

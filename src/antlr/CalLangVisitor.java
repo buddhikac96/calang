@@ -64,12 +64,40 @@ public interface CalLangVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAddition(CalLangParser.AdditionContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code LessThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessThan(CalLangParser.LessThanContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Variable}
 	 * labeled alternative in {@link CalLangParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitVariable(CalLangParser.VariableContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code NotEqual}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotEqual(CalLangParser.NotEqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Equal}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqual(CalLangParser.EqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code GreaterThan}
+	 * labeled alternative in {@link CalLangParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGreaterThan(CalLangParser.GreaterThanContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Literal}
 	 * labeled alternative in {@link CalLangParser#expr}.
@@ -84,4 +112,23 @@ public interface CalLangVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDivision(CalLangParser.DivisionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code IfStatement}
+	 * labeled alternative in {@link CalLangParser#ifstmt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfStatement(CalLangParser.IfStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CalLangParser#block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlock(CalLangParser.BlockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link CalLangParser#blockbody}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlockbody(CalLangParser.BlockbodyContext ctx);
 }
