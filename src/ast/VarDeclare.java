@@ -3,19 +3,19 @@ package ast;
 public class VarDeclare extends Statement {
     String datatype;
     String name;
-    Literal literal;
+    Expression value;
 
-    public VarDeclare(String datatype, String name, Literal literal) {
+    public VarDeclare(String datatype, String name, Expression value) {
         this.datatype = datatype;
         this.name = name;
-        this.literal = literal;
+        this.value = value;
     }
 
     @Override
     public String toJava() {
         return new StringBuilder(this.datatype)
                 .append(" " + this.name + " = ")
-                .append(this.literal.toJava())
+                .append(this.value.toJava())
                 .append(";")
                 .toString();
     }

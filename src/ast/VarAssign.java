@@ -3,18 +3,18 @@ package ast;
 public class VarAssign extends Statement {
 
     String name;
-    Literal literal;
+    Expression expression;
 
-    public VarAssign(String name, Literal literal) {
+    public VarAssign(String name, Expression expression) {
         this.name = name;
-        this.literal = literal;
+        this.expression = expression;
     }
 
     @Override
     public String toJava() {
         return new StringBuilder(this.name)
                 .append(" = ")
-                .append(this.literal.toJava())
+                .append(this.expression.toJava())
                 .toString();
     }
 }
