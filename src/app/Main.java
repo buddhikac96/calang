@@ -3,6 +3,7 @@ package app;
 import antlr.CalLangLexer;
 import antlr.CalLangParser;
 import ast.Program;
+import ast.err.SyntaxErrorListener;
 import ast.gen.Antlr2Program;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -14,8 +15,12 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+
         String fileName = "/home/hackerbuddy/dev/opensource/calang/samples/sample.cal";
         CalLangParser parser = getParser(fileName);
+
+        parser.removeErrorListeners();
+        parser.addErrorListener(new SyntaxErrorListener());
 
         ParseTree antlrParseTree = parser.prog();
 
