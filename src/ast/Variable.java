@@ -10,6 +10,6 @@ public class Variable extends Expression {
 
     @Override
     public String toJava() {
-        return null;
+        return this.name;
     }
 }

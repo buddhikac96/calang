@@ -1,6 +1,6 @@
 package ast;
 
-public class IntegerLit extends Literal {
+public class IntegerLit extends Expression {
     int value;
 
     public IntegerLit(int value) {

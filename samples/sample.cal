@@ -1,5 +1,6 @@
 int a = 5;
 int b = 10;
+
 check(a > b) {
     a = 10;
     b = 5;
@@ -7,4 +8,5 @@ check(a > b) {
     a = a - 1;
     b = b - 1;
 }
+
 show(a);

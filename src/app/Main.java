@@ -2,6 +2,8 @@ package app;
 
 import antlr.CalLangLexer;
 import antlr.CalLangParser;
+import ast.Program;
+import ast.gen.Antlr2Program;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -15,10 +17,15 @@ public class Main {
         String fileName = "/home/hackerbuddy/dev/opensource/calang/samples/sample.cal";
         CalLangParser parser = getParser(fileName);
 
-        ParseTree antlrAst = parser.prog();
+        ParseTree antlrParseTree = parser.prog();
 
-        Antlr2Java a2j = new Antlr2Java();
-        String jcode = a2j.visit(antlrAst);
+        /*Antlr2Java a2j = new Antlr2Java();
+        String jcode = a2j.visit(antlrParseTree);*/
+
+        Antlr2Program antlr2Program = new Antlr2Program();
+        Program program = antlr2Program.visit(antlrParseTree);
+
+        String jcode = program.toJava();
 
         System.out.println(jcode);
     }

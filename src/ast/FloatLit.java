@@ -1,6 +1,6 @@
 package ast;
 
-public class FloatLit extends Literal {
+public class FloatLit extends Expression {
     float value;
 
     public FloatLit(float value) {

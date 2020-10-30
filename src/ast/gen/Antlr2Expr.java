@@ -72,10 +72,10 @@ public class Antlr2Expr extends CalLangBaseVisitor<Expression> {
         String literal = ctx.getChild(0).getText();
         if(literal.contains(".")){
             float value = Float.parseFloat(literal);
-            return new FloatLiteral(value);
+            return new FloatLit(value);
         }else{
             int value = Integer.parseInt(literal);
-            return new IntLiteral(value);
+            return new IntegerLit(value);
         }
     }
 

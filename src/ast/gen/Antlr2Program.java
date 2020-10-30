@@ -16,7 +16,7 @@ public class Antlr2Program extends CalLangBaseVisitor<Program> {
     public Program visitProg(CalLangParser.ProgContext ctx) {
         Program program = new Program();
 
-        for(int i = 0; i < ctx.getChildCount(); i++){
+        for(int i = 0; i < ctx.getChildCount() - 1; i++){
             program.addStatement(antlr2Statement.visit(ctx.getChild(i)));
         }
 

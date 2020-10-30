@@ -1,7 +1,5 @@
 package ast;
 
-import java.util.List;
-
 public class IfStatement extends Statement {
 
     Expression condition;
@@ -16,6 +14,15 @@ public class IfStatement extends Statement {
 
     @Override
     public String toJava() {
-        return null;
+        StringBuilder jcode =  new StringBuilder("if(")
+                .append(this.condition.toJava())
+                .append(")")
+                .append(this.ifBlock.toJava());
+
+        if(this.elseBlock != null){
+            jcode.append("else").append(this.elseBlock.toJava());
+        }
+
+        return jcode.toString();
     }
 }

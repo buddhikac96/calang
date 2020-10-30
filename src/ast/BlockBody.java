@@ -12,6 +12,11 @@ public class BlockBody extends Statement {
 
     @Override
     public String toJava() {
-        return null;
+        StringBuilder jcode = new StringBuilder();
+        for(Statement statement : this.statements){
+            jcode.append(statement.toJava()).append(";");
+        }
+
+        return jcode.toString();
     }
 }

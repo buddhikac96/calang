@@ -10,6 +10,9 @@ public class Block extends Statement {
 
     @Override
     public String toJava() {
-        return null;
+        return new StringBuilder("{")
+                .append(blockBody.toJava())
+                .append("}")
+                .toString();
     }
 }
