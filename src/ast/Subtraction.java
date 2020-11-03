@@ -10,6 +10,7 @@ public class Subtraction extends Expression {
         this.right = right;
     }
 
+
     @Override
     public String toJava() {
         return new StringBuilder(this.left.toJava())

@@ -3,7 +3,7 @@ package ast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Program {
+public class Program implements IJcode{
     List<Statement> statementList;
 
     public Program() {

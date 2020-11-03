@@ -1,5 +1,5 @@
 package ast;
 
-public abstract class Statement {
-    public abstract String toJava();
+public abstract class Statement implements IJcode{
+
 }
