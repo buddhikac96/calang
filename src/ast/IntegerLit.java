@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class IntegerLit extends Expression {
     int value;
 
@@ -10,6 +12,11 @@ public class IntegerLit extends Expression {
     @Override
     public String toJava() {
         return Integer.toString(this.value);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitIntegerLit(this);
     }
 }
 

@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class IfStatement extends Statement {
 
     Expression condition;
@@ -24,5 +26,10 @@ public class IfStatement extends Statement {
         }
 
         return jcode.toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitIfStatement(this);
     }
 }

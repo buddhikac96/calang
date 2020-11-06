@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class VarDeclare extends Statement {
     String datatype;
     String name;
@@ -18,6 +20,11 @@ public class VarDeclare extends Statement {
                 .append(this.value.toJava())
                 .append(";")
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitVarDeclare(this);
     }
 }
 

@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class Division extends Expression {
 
     Expression left;
@@ -16,5 +18,10 @@ public class Division extends Expression {
                 .append(" / ")
                 .append(this.right.toJava())
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitDivision(this);
     }
 }

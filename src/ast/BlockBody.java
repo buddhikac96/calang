@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 import java.util.List;
 
 public class BlockBody extends Statement {
@@ -18,5 +20,10 @@ public class BlockBody extends Statement {
         }
 
         return jcode.toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitBlockBody(this);
     }
 }

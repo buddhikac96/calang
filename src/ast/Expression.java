@@ -1,6 +1,6 @@
 package ast;
 
-public abstract class Expression implements IJcode{
+public abstract class Expression implements AstNode {
 
 }
 

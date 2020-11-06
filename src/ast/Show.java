@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class Show extends Statement {
 
     Expression expression;
@@ -14,5 +16,10 @@ public class Show extends Statement {
                 .append(this.expression.toJava())
                 .append(");")
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitShow(this);
     }
 }

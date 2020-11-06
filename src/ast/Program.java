@@ -1,9 +1,11 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Program implements IJcode{
+public class Program implements AstNode {
     List<Statement> statementList;
 
     public Program() {
@@ -29,6 +31,11 @@ public class Program implements IJcode{
         javacode.append(end);
 
         return javacode.toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitProgram(this);
     }
 }
 

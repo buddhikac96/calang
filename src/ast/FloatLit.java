@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class FloatLit extends Expression {
     float value;
 
@@ -10,5 +12,10 @@ public class FloatLit extends Expression {
     @Override
     public String toJava() {
         return Float.toString(this.value);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitFloatLit(this);
     }
 }

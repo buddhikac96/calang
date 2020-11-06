@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class Variable extends Expression {
 
     String name;
@@ -11,5 +13,10 @@ public class Variable extends Expression {
     @Override
     public String toJava() {
         return this.name;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitVariable(this);
     }
 }

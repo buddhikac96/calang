@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class Multiplication extends Expression {
 
     Expression left;
@@ -16,6 +18,11 @@ public class Multiplication extends Expression {
                 .append(" * ")
                 .append(this.right.toJava())
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitMultiplication(this);
     }
 }
 

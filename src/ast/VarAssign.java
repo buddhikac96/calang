@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class VarAssign extends Statement {
 
     String name;
@@ -16,6 +18,11 @@ public class VarAssign extends Statement {
                 .append(" = ")
                 .append(this.expression.toJava())
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitVarAssign(this);
     }
 }
 

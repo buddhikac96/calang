@@ -1,5 +1,7 @@
 package ast;
 
+import transpiler.astVisitor.Visitor;
+
 public class Subtraction extends Expression {
 
     Expression left;
@@ -17,6 +19,11 @@ public class Subtraction extends Expression {
                 .append(" - ")
                 .append(this.right.toJava())
                 .toString();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSubtraction(this);
     }
 }
 
