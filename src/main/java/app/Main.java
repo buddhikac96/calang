@@ -15,7 +15,13 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
 
-        String fileName = "/home/hackerbuddy/dev/opensource/calang/samples/sample.cal";
+        String fileName = new String();
+        try{
+            fileName = args[0];
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Please provide to Simply file to compile: ");
+        }
+
         CalLangParser parser = getParser(fileName);
 
         parser.removeErrorListeners();
