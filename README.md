@@ -1,3 +1,6 @@
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=buddhikac96_calang)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=buddhikac96_calang&metric=bugs)](https://sonarcloud.io/dashboard?id=buddhikac96_calang)
+
 # calang
 calang is a Simple Programming language which is compiled into Java.
 This language contains simple arithmetic operations..
