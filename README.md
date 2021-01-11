@@ -1,6 +1,6 @@
 # calang
 calang is a Simple Programming language which is compiled into Java.
-This language contains simple arithmetic operations.
+This language contains simple arithmetic operations..
 
 ## Sample Code
 
